@@ -7,3 +7,5 @@ if a > 40:
 
 
 print('Test')
+
+b = 100
