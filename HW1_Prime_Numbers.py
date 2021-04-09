@@ -20,5 +20,6 @@ while True:
         p_list.append(i)
         if(len(p_list) == N):
             print("First "+str(N)+" prime numbers:" + str(p_list))
+            break
     i+=1
 
