@@ -5,20 +5,19 @@ all punctuation and special symbols (new line, tab etc.) and put all words in lo
 Code writer: Jiyoung Kim
 '''
 
-import string
-
 # Open text file in read mode
 # Remove all punctuation, special symbols, lower/upper case difference
+import string
 
 my_file = 'Obama_WordsMatter.txt'
+counts = dict()
+
 with open(my_file, 'r') as f:
     for line in f:
         line = line.lower()
         line = line.strip()
         line = line.translate(line.maketrans('', '', string.punctuation))
         words = line.split(" ")
-        counts = dict()
-
         for word in words:
             if word in counts:
                 counts[word] += 1
