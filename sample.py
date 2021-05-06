@@ -1,36 +1,14 @@
-import string
+'''
+/Users/jiyoungkim/Desktop/python_20212/
+'''
+import os
+import os.path
+from pip._vendor.distlib.compat import raw_input
 
-# Open the file in read mode
-text = open("sample.txt", "r")
+print('Please provide the path of the folder you want to know the Space (Put the slash at the end):')
+dir = raw_input()
 
-# Create an empty dictionary
-d = dict()
-
-# Loop through each line of the file
-for line in text:
-    # Remove the leading spaces and newline character
-    line = line.strip()
-
-    # Convert the characters in line to
-    # lowercase to avoid case mismatch
-    line = line.lower()
-
-    # Remove the punctuation marks from the line
-    line = line.translate(line.maketrans("", "", string.punctuation))
-
-    # Split the line into words
-    words = line.split(" ")
-
-    # Iterate over each word in line
-    for word in words:
-        # Check if the word is already in dictionary
-        if word in d:
-            # Increment count of word by 1
-            d[word] = d[word] + 1
-        else:
-            # Add the word to dictionary with count 1
-            d[word] = 1
-
-# Print the contents of dictionary
-for key in list(d.keys()):
-    print(key, ":", d[key])
+list = os.listdir(dir)
+total_number_files = len(list)
+print(total_number_files)
+print(list)
